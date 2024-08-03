@@ -1,0 +1,37 @@
+h1, h2, h3, h4, .h1, .h2, .h3, .h4{
+    font-family: 'poxast';
+}
+
+*{
+    font-family: 'arcadeclassic';
+}
+
+:root{
+    --giallo-ocra: rgb(214, 172, 78);
+    --ble-cielo: rgb(73, 142, 185);
+    --black: rgb(45, 46, 45);
+}
+
+.bg-ocra{
+    background-color: var(--giallo-ocra);
+}
+
+.bg-cielo{
+    background-color: var(--ble-cielo);
+}
+
+.bg-black{
+    background-color: var(--black);
+}
+
+.text-ocra{
+    color: var(--giallo-ocra);
+}
+
+.text-cielo{
+    color: var(--ble-cielo);
+}
+
+.text-black{
+    color: var(--black);
+}
