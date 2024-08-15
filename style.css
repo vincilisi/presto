@@ -67,10 +67,37 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4{
     margin: 15px;
 }
 .nav-link:hover{
-   color: var(--ocra) !important;
-   text-shadow: 15px 15px 1px var(--white), -15px -15px 1px var(--white);
+   color: var(--violet) !important;
+   text-shadow: 15px 15px 3px var(--white), -15px -15px 3px var(--white);
 }
 
 .logo{
     width: 100px;
+}
+
+/* header */
+.header{
+    background-image: linear-gradient(rgba(0,0,0), transparent, rgba(0,0,0)), url(https://www.diggita.it/modules/auto_thumb/2019/01/03/1631061_x4W3fxK0Fes8WgVZcuJP8EoYKX2.jpg);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    opacity: 90%;
+}
+
+.btn-custom{
+    color: var(--white);
+    font-family: 'poxast';
+    background-color: var(--violet);
+    border: 2px solid var(--black);
+    border-radius: 50px;
+    margin: 20px 50px;
+    padding: 30px 30px;
+    transition: 0.5s;
+}
+
+.btn-custom:hover{
+    color: var(--violet);
+    background-color: var(--white);
+    font-family: 'poxast';
+    transform: scale(1.2);
 }
