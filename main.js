@@ -28,7 +28,53 @@ window.addEventListener('scroll', ()=>{
         links.forEach( (link)=>{
             link.style.color = 'var(--violet)'
         } );
-         imgnav.src= "http://127.0.0.1:5500/media/logo-v.png"
-         consol.src ="http://127.0.0.1:5500/media/nav-v.png"
+        imgnav.src= "http://127.0.0.1:5500/media/logo-v.png"
+        consol.src ="http://127.0.0.1:5500/media/nav-v.png"
     }
 })
+
+// numeri
+let firnum = document.querySelector('#first');
+let secnum = document.querySelector('#second');
+let thdnum = document.querySelector('#third')
+
+function creaIntervall(n, element, time){
+    let counter = 0
+    
+    
+    let interval= setInterval(() => {
+        if (counter < n) {
+            counter++
+            element.innerHTML= counter
+        }
+    }, time);
+
+    setTimeout(() => {
+        comferm=true
+    }, 5000);
+};
+
+
+creaIntervall(300, firnum, 100);
+creaIntervall(100, secnum, 50);
+creaIntervall(150, thdnum, 20);
+let conferm = true
+
+
+let observer = new IntersectionObserver( (entris)=>{
+    
+    entris.forEach((entri)=>{
+        
+        if(entri.isIntersecting && conferm){
+            creaIntervall(30, firnum, 100);
+            creaIntervall(100, secnum, 50);
+            creaIntervall(150, thdnum, 20);
+            comferm = false;
+        }
+        
+    })
+    
+} );
+
+
+observer.observe(first)
