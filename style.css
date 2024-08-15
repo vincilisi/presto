@@ -7,31 +7,70 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4{
 }
 
 :root{
-    --giallo-ocra: rgb(214, 172, 78);
-    --ble-cielo: rgb(73, 142, 185);
+    --ocra: rgb(214, 172, 78);
+    --cielo: rgb(26, 1, 250);
     --black: rgb(45, 46, 45);
+    --violet: rgb(151, 110, 255);
+    --white: rgb(255, 255, 255);
 }
 
 .bg-ocra{
-    background-color: var(--giallo-ocra);
+    background-color: var(--ocra);
 }
 
 .bg-cielo{
-    background-color: var(--ble-cielo);
+    background-color: var(--cielo);
 }
 
 .bg-black{
     background-color: var(--black);
 }
 
+.bg-violet{
+    background-color: var(--violet);
+}
+
+.bg-white{
+    background-color: var(--white);
+}
+
 .text-ocra{
-    color: var(--giallo-ocra);
+    color: var(--ocra);
 }
 
 .text-cielo{
-    color: var(--ble-cielo);
+    color: var(--cielo);
 }
 
 .text-black{
     color: var(--black);
+}
+
+.text-violet{
+    color: var(--violet);
+}
+
+.text-white{
+    color: var(--white);
+}
+
+/* NavBar */
+.navbar{
+    height: 160px;
+    transition: 0.5s;
+}
+
+.nav-link{
+    color: var(--violet);
+    font-weight: 300;
+    font-size: 30px;
+    margin: 15px;
+}
+.nav-link:hover{
+   color: var(--ocra) !important;
+   text-shadow: 15px 15px 1px var(--white), -15px -15px 1px var(--white);
+}
+
+.logo{
+    width: 100px;
 }
