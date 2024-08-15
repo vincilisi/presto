@@ -1,3 +1,9 @@
+body{
+    background-color: var(--black);
+    color: var(--cielo);
+}
+
+
 h1, h2, h3, h4, .h1, .h2, .h3, .h4{
     font-family: 'poxast';
 }
@@ -75,6 +81,10 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4{
     width: 100px;
 }
 
+.logo2{
+    width: 150px;
+    margin-left:80px;
+}
 /* header */
 .header{
     background-image: linear-gradient(rgba(0,0,0), transparent, rgba(0,0,0)), url(https://www.diggita.it/modules/auto_thumb/2019/01/03/1631061_x4W3fxK0Fes8WgVZcuJP8EoYKX2.jpg);
@@ -100,4 +110,41 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4{
     background-color: var(--white);
     font-family: 'poxast';
     transform: scale(1.2);
+}
+
+/* position */
+.positioned{
+    position: relative;
+    top: -150px !important;
+}
+
+.col-custom{
+
+    padding: 10px;
+    border: 3px solid var(--violet);
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.col-custom:hover{
+   transform: scale(1.2);
+   background-color: var(--black);
+   color: var(--violet);
+   border: 2px solid var(--ocra);
+}
+
+@media screen and (max-width: 600px) {
+    .positioned{
+        position: static;
+    }
+}
+
+/* Numeri */
+.number{
+    font-size: 70px;
+    font-weight: 550;
+}
+.p1{
+    font-size: 50px;
+    font-weight: 300;
 }
