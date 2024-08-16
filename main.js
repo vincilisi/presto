@@ -1,7 +1,7 @@
 let navbar = document.querySelector('#navbar');
 let links = document.querySelectorAll('.nav-link');
 let imgnav= document.querySelector('#imgnav')
-let consol = document.querySelector('#console')
+let cons = document.querySelector('#console')
 let navcol = document.querySelector('.navcol')
 
 
@@ -17,7 +17,7 @@ window.addEventListener('scroll', ()=>{
             link.style.color = 'var(--white)'
         } );
         imgnav.src= "http://127.0.0.1:5500/media/logo-w.png"
-        consol.src ="http://127.0.0.1:5500/media/nav-w.png"
+        cons.src ="http://127.0.0.1:5500/media/nav-w.png"
     }
     else{
         navbar.classList.add('bg-black');
@@ -29,7 +29,7 @@ window.addEventListener('scroll', ()=>{
             link.style.color = 'var(--violet)'
         } );
         imgnav.src= "http://127.0.0.1:5500/media/logo-v.png"
-        consol.src ="http://127.0.0.1:5500/media/nav-v.png"
+        cons.src ="http://127.0.0.1:5500/media/nav-v.png"
     }
 })
 
