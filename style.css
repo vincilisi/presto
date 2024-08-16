@@ -83,7 +83,7 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4{
 
 .logo2{
     width: 150px;
-    margin-left:80px;
+    margin-right: 150px;
 }
 /* header */
 .header{
@@ -146,4 +146,26 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4{
 }
 .p1{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* swiper */
+.swiper{
+    height: 750px;
+}
+
+.card-rec{
+    height: 250px;
+    width: 500px;
+    border: 2px solid var(--ocra);
+    border-radius: 20px;
+}
+
+.swiper-slide{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.p2p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
