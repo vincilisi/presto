@@ -1,0 +1,1 @@
+fetch('./annunci.json').then( (response)=> response.json() )
