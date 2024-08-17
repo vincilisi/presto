@@ -169,3 +169,50 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4{
 .p2p{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+
+/* Annunci */
+.accordion-item, .accordion-button{
+    background-color: var(--black);
+    color: var(--violet);
+}
+
+.accordion-button:not(.collapsed){
+    color: var(--ocra);
+    background-color: var(--black);
+
+    box-shadow: none;
+}
+
+.accordion-button:focus{
+    box-shadow: none;
+}
+
+.card-custom{
+    width: 25%;
+    border: 2px solid var(--ocra);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.h3p{
+    font-size: 15px;
+    color: var(--violet);
+   margin-top: 25px;
+}
+
+
+
+.lea1{
+    font-size: 50px;
+    color: #cccccc
+}
+.img-card{
+    border-top-left-radius: 29px;
+    border-top-right-radius: 29px;
+}
