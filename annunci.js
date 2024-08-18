@@ -59,27 +59,35 @@ fetch('./annunci.json').then((response)=> response.json()).then((data)=>{
 
     showCar(data);
 
-    function filtre(categoria) {
+    let radiobuttons = document.querySelectorAll('.form-check-input');
+
+    function filtre(array) {
+        
+        let categoria = Array.from(radiobuttons).find((button)=> button.checked).id;
+        
         
         if (categoria != 'All'){
             let filtro = data.filter((annuncio)=> annuncio.category == categoria)
+            
 
         
-            showCar(filtro)
+            return filtro;
         }else{
-            showCar(data);
+            return array
         }
 
     };
 
 
 
-    let radiobuttons = document.querySelectorAll('.form-check-input');
+   
     
 
     radiobuttons.forEach((button)=>{
         button.addEventListener('click',()=>{
-            filtre(button.id);
+            setPric();
+
+           global();
         } )
     });
 
@@ -88,7 +96,7 @@ fetch('./annunci.json').then((response)=> response.json()).then((data)=>{
     let prc = document.querySelector('#prc')
 
     function setPric(){
-        let prices = data.map((annuncio)=> +annuncio.price);
+        let prices = filtre(data).map((annuncio)=> +annuncio.price);
         prices.sort((a, b)=> a-b);
         let maxP = Math.ceil(prices.pop());
         ran.max=maxP;
@@ -99,14 +107,14 @@ fetch('./annunci.json').then((response)=> response.json()).then((data)=>{
     setPric();
 
    
-    function filtr(){
-        let filt =data.filter((annuncio)=> +annuncio.price <= ran.value)
-        showCar(filt);
+    function filtr(array){
+        let filt =array.filter((annuncio)=> +annuncio.price <= ran.value)
+        return filt;
     }
 
     ran.addEventListener( 'input', ()=>{
         prc.innerHTML = ran.value;
-        filtr();
+        global();
 
 
     } );
@@ -115,12 +123,25 @@ fetch('./annunci.json').then((response)=> response.json()).then((data)=>{
 
     let parola = document.querySelector('#parola')
 
-    function filtreParola(parl){
-        let filterd = data.filter((annuncio)=> annuncio.name.toLowerCase().includes(parl.toLowerCase()))
-        showCar(filterd);
+    function filtreParola(array){
+        let filterd = array.filter((annuncio)=> annuncio.name.toLowerCase().includes(parola.value.toLowerCase()))
+        return filterd
     }
 
     parola.addEventListener('input', ()=>{
-        filtreParola(parola.value);
+        global();
     })
+
+
+function global(){
+
+    let filtroByCategory = filtre(data);
+    let filtroByPrice = filtr(filtroByCategory);
+    let filtroByParola = filtreParola(filtroByPrice)
+
+
+    showCar(filtroByParola)
+;}
+
+
 });
