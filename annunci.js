@@ -1,5 +1,6 @@
 fetch('./annunci.json').then((response)=> response.json()).then((data)=>{
 
+        data.sort((a,b)=> a.price - b.price)
 
     let radWr = document.querySelector('#radWr');
     let carWr = document.querySelector('#caWr');
@@ -83,14 +84,43 @@ fetch('./annunci.json').then((response)=> response.json()).then((data)=>{
     });
 
 
+    let ran = document.querySelector('#raninp');
+    let prc = document.querySelector('#prc')
+
     function setPric(){
         let prices = data.map((annuncio)=> +annuncio.price);
         prices.sort((a, b)=> a-b);
         let maxP = Math.ceil(prices.pop());
-        console.log(maxP);
-        
+        ran.max=maxP;
+        ran.value=maxP;
+        prc.innerHTML = maxP;
     }
 
     setPric();
 
+   
+    function filtr(){
+        let filt =data.filter((annuncio)=> +annuncio.price <= ran.value)
+        showCar(filt);
+    }
+
+    ran.addEventListener( 'input', ()=>{
+        prc.innerHTML = ran.value;
+        filtr();
+
+
+    } );
+
+
+
+    let parola = document.querySelector('#parola')
+
+    function filtreParola(parl){
+        let filterd = data.filter((annuncio)=> annuncio.name.toLowerCase().includes(parl.toLowerCase()))
+        showCar(filterd);
+    }
+
+    parola.addEventListener('input', ()=>{
+        filtreParola(parola.value);
+    })
 });
